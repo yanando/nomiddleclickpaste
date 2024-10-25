@@ -22,15 +22,16 @@ import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
 export default class NoMiddleClickPasteExtension extends Extension {
     enable() {
         const clipboard = St.Clipboard.get_default()
-        setInterval(() => {
+        this._interval = setInterval(() => {
             clipboard.get_text(0, t => {
                 if (t !== "") {
                     clipboard.set_text(0, "")
                 }
             })
         }, 500);
-        // this should error
     }
 
-    disable() {}
+    disable() {
+        clearInterval(this._interval)
+    }
 }
