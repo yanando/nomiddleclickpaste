@@ -1,0 +1,8 @@
+{
+  "name": "NoMiddleClickPaste",
+  "description": "Disables paste when the middle mouse button is pressed, by ensuring the primary selection buffer is always empty",
+  "uuid": "yanando@pluto.moe",
+  "shell-version": [
+    "47"
+  ]
+}
